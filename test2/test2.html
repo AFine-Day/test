@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="css/text2.css"/>
 		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/test2.js"></script>
 		<meta charset="utf-8">
 		<title></title>
 	</head>
@@ -15,11 +16,9 @@
 				<div class="top-1">
 				<div class="top-left">
 					<div class="top-left-1">
-						
-					
 					<a>欢迎来到综信财务！</a>
-					<a><i class="fa fa-weibo"></i></a>
-					<a><i class="fa fa-weixin"></i></a>
+					<a href="https://weibo.com/"><i class="fa fa-weibo"></i></a>
+					<a href="https://wx.qq.com/"><i class="fa fa-weixin"></i></a>
 					</div>
 					<div class="top-left-2">
 						<i class="fa fa-tablet"></i>
@@ -46,9 +45,9 @@
 				<div class="top-right">
 					<ul>
 						<li><i class="fa fa-user"></i><a>登录 / 注册</a><span>|</span></li>
-						<li><a>设为首页</a><span>|</span></li>
-						<li><a>加入收藏 </a><span>|</span></li>
-						<li><a>联系我们</a></li>
+						<li><a href="#">设为首页</a><span>|</span></li>
+						<li><a href="#">加入收藏 </a><span>|</span></li>
+						<li><a href="#">联系我们</a></li>
 						<li class="phone"><i class="fa fa-phone"></i><a>0753-3333333</a></li>
 					</ul>
 				</div>
@@ -74,11 +73,71 @@
 					<div class="nav-a">
 						<a href="#" class="nav-menu">全部服务分类</a>
 						<ul class="nav-menu-style">
-							<li><a href="#">公司注册、公司变更、办资质<i class="fa fa-angle-right"></i></a></li>
-							<li><a href="#">代理记账、审计、税务代办<i class="fa fa-angle-right"></i></a></li>
-							<li><a href="#">商标注册、著作权、专利       <i class="fa fa-angle-right"></i></a></li>
-							<li><a href="#">企业社保、个人社保、公积金  <i class="fa fa-angle-right"></i></a></li>
-							<li><a href="#">问律师、写合同、法律顾问      <i class="fa fa-angle-right"></i></a></li>
+							<li><a class="nav-menu-style-a" href="#">公司注册、公司变更、办资质<i class="fa fa-angle-right"></i></a>
+									<div class="nav-menu-style-li">
+											<a href="#">公司注册</a>
+											<a href="#">公司注册</a>
+											<a href="#">公司注册</a>
+											<a href="#">公司变更</a>
+											<a href="#">公司变更</a>
+											<a href="#">公司变更</a>
+											<a href="#">办资质</a>
+											<a href="#">办资质</a>
+											<a href="#">办资质</a>
+									</div>
+							</li>
+							<li><a class="nav-menu-style-a" href="#">代理记账、审计、税务代办<i class="fa fa-angle-right"></i></a>
+									<div class="nav-menu-style-li li-two">
+											<a href="#">代理记账</a>
+											<a href="#">代理记账</a>
+											<a href="#">代理记账</a>
+											<a href="#">审计</a>
+											<a href="#">审计</a>
+											<a href="#">审计</a>
+											<a href="#">税务代办</a>
+											<a href="#">税务代办</a>
+											<a href="#">税务代办</a>
+									</div>
+							</li>
+							<li><a class="nav-menu-style-a" href="#">商标注册、著作权、专利       <i class="fa fa-angle-right"></i></a>
+									<div class="nav-menu-style-li li-three">
+											<a href="#">代理记账</a>
+											<a href="#">代理记账</a>
+											<a href="#">代理记账</a>
+											<a href="#">著作权</a>
+											<a href="#">著作权</a>
+											<a href="#">著作权</a>
+											<a href="#">专利</a>
+											<a href="#">专利</a>
+											<a href="#">专利</a>
+									</div>
+							</li>
+							<li><a class="nav-menu-style-a" href="#">企业社保、个人社保、公积金  <i class="fa fa-angle-right"></i></a>
+									<div class="nav-menu-style-li li-four">
+											<a href="#">企业社保</a>
+											<a href="#">企业社保</a>
+											<a href="#">企业社保</a>
+											<a href="#">个人社保</a>
+											<a href="#">个人社保</a>
+											<a href="#">个人社保</a>
+											<a href="#">公积金</a>
+											<a href="#">公积金</a>
+											<a href="#">公积金</a>
+									</div>
+							</li>
+							<li><a class="nav-menu-style-a" href="#">问律师、写合同、法律顾问      <i class="fa fa-angle-right"></i></a>
+									<div class="nav-menu-style-li li-five">
+											<a href="#">问律师</a>
+											<a href="#">问律师</a>
+											<a href="#">问律师</a>
+											<a href="#">写合同</a>
+											<a href="#">写合同</a>
+											<a href="#">写合同</a>
+											<a href="#">法律顾问</a>
+											<a href="#">法律顾问</a>
+											<a href="#">法律顾问</a>
+									</div>
+							</li>
 							
 						</ul>
 					</div>
@@ -93,8 +152,18 @@
 						<li><a href="#">关于我们</a></li>
 					</ul>
 				</div>
-				 <div class="banner">
-				 	<img src="img/banner.jpg" >
+				 <div class="carousel slide banner" data-ride="carousel">
+					 <div class="carousel-inner">
+					 	<div class="item active">
+					 			<img src="img/banner.jpg" >
+					 	</div>
+					 	<div class="item">
+					 			<img src="img/1.jpg" >
+					 	</div>
+					 	<div class="item">
+					 			<img src="img/2.jpg" >
+					 	</div>
+					 </div>
 				 </div>
 			</div>
 			<div class="nav-one">
@@ -200,9 +269,9 @@
 						<i class="fa fa-angle-left fa-3x"></i>
 					</div>
 					<div class="nav-three-centre">
-						<ul>
-							<li>
-								<div class="nav-three-content">
+						<ul class="heros">
+							<li class="hero">
+								<div class="nav-three-content current">
 									<div class="nav-three-img ">
 										<img class="nav-three-img-color" src="img/4.jpg" >
 									</div>
@@ -210,7 +279,7 @@
 									<a class="nav-three-text-color">与客户洽谈签订注册公司确认单</a>
 								</div>
 							</li>
-							<li>
+							<li class="hero">
 								<div class="nav-three-content">
 									<div class="nav-three-img">
 										<img src="img/4.jpg" >
@@ -219,7 +288,7 @@
 									<a class="nav-three-text-color">字号查重及核准公司名称</a>
 								</div>
 							</li>
-							<li>
+							<li class="hero">
 								<div class="nav-three-content">
 									<div class="nav-three-img">
 										<img src="img/4.jpg" >
@@ -228,7 +297,7 @@
 									<a class="nav-three-text-color">与客户洽谈签订注册公司确认单</a>
 								</div>
 							</li>
-							<li>
+							<li class="hero">
 								<div class="nav-three-content">
 									<div class="nav-three-img">
 										<img src="img/4.jpg" >
@@ -237,7 +306,7 @@
 									<a class="nav-three-text-color">名称核准通过</a>
 								</div>
 							</li>
-							<li>
+							<li class="hero">
 								<div class="nav-three-content">
 									<div class="nav-three-img">
 										<img src="img/4.jpg" >
@@ -246,6 +315,52 @@
 									<a class="nav-three-text-color">整理文书及准备资料</a>
 								</div>
 							</li>
+							<li class="hero">
+								<div class="nav-three-content">
+									<div class="nav-three-img">
+										<img src="img/4.jpg" >
+									</div>
+									<h4 class="nav-three-text-color">步骤六</h4>
+									<a class="nav-three-text-color">整理文书及准备资料</a>
+								</div>
+							</li>
+							<li class="hero">
+								<div class="nav-three-content">
+									<div class="nav-three-img">
+										<img src="img/4.jpg" >
+									</div>
+									<h4 class="nav-three-text-color">步骤七</h4>
+									<a class="nav-three-text-color">整理文书及准备资料</a>
+								</div>
+							</li>
+							<li class="hero">
+								<div class="nav-three-content">
+									<div class="nav-three-img">
+										<img src="img/6.jpg" >
+									</div>
+									<h4 class="nav-three-text-color">步骤八</h4>
+									<a class="nav-three-text-color">整理文书及准备资料</a>
+								</div>
+							</li>
+							<li class="hero">
+								<div class="nav-three-content">
+									<div class="nav-three-img">
+										<img src="img/6.jpg" >
+									</div>
+									<h4 class="nav-three-text-color">步骤九</h4>
+									<a class="nav-three-text-color">整理文书及准备资料</a>
+								</div>
+							</li>
+							<li class="hero">
+								<div class="nav-three-content">
+									<div class="nav-three-img">
+										<img src="img/6.jpg" >
+									</div>
+									<h4 class="nav-three-text-color">步骤十</h4>
+									<a class="nav-three-text-color">整理文书及准备资料</a>
+								</div>
+							</li>
+							
 						</ul>
 					</div>
 					<div class="nav-three-right">
@@ -430,24 +545,24 @@
 				<ul>
 					<li>
 						<a href="#" class="nav-footer-text-one">关于综信财务</a>
-						<a>了解我们</a>
-						<a>品牌故事</a>
-						<a>加入我们</a>
-						<a>联系我们</a>
+						<a href="#">了解我们</a>
+						<a href="#">品牌故事</a>
+						<a href="#">加入我们</a>
+						<a href="#">联系我们</a>
 					</li>
 					<li>
 						<a href="#" class="nav-footer-text-one">售后服务</a>
-						<a>服务中心</a>
-						<a>售后服务政策</a>
-						<a>问答中心</a>
-						<a>成功案例</a>
+						<a href="#">服务中心</a>
+						<a href="#">售后服务政策</a>
+						<a href="#">问答中心</a>
+						<a href="#">成功案例</a>
 					</li>
 					<li>
 						<a href="#" class="nav-footer-text-one">热门产品</a>
-						<a>公司注册</a>
-						<a>工商注册</a>
-						<a>知识产权</a>
-						<a>财税代理</a>
+						<a href="#">公司注册</a>
+						<a href="#">工商注册</a>
+						<a href="#">知识产权</a>
+						<a href="#">财税代理</a>
 					</li>
 				</ul>
 			</div>

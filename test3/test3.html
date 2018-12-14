@@ -3,7 +3,9 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/test3.css"/>
-		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script src="js/test3.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入 echarts.js -->
+		<script src="js/echarts.min.js"></script>
 		<meta charset="utf-8">
 		<title></title>
 	</head>
@@ -93,22 +95,24 @@
 					</li>
 					<li class="centre-footer-li centre-footer-margin">
 						<div id="centre-footer-2">
-							<div id="centre-footer-2-chart">
-								
+							<div id="centre-footer-2-chart0" class="centre-footer-2-style">
 							</div>
+							<div id="centre-footer-2-chart1" class="centre-footer-2-style">
+							</div>
+							<div id="centre-footer-2-chart2" class="centre-footer-2-style">
+							</div>
+							<a onclick="DAILY();" id="centre-footer-2-text0">DAILY</a>
+							<a onclick="MONTHLY()" id="centre-footer-2-text1">MONTHLY</a>
+							<a onclick="YEARLY()" id="centre-footer-2-text2">YEARLY</a>
 						</div>
 					</li>
 					<li class="centre-footer-li">
 						<div id="centre-footer-3">
-							<div class="centre-footer-3-1">
+						 <div class="centre-footer-3-1">
 								<a>Analytics</a>
 								<i class="fa fa-gear"></i>
 							</div>
-							<div class="centre-footer-3-2">
-								<h3>25,134</h3>
-								<span class="centre-footer-span"></span>
-								<a>FOLLOWERS</a>
-							</div>
+							
 						<div id="centre-footer-3-chart">
 							
 						</div>
@@ -212,8 +216,668 @@
 				</ul>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/test3.js">
+		<script type="text/javascript">
+			//// 基于准备好的dom，初始化echarts实例
+			var Chart0 = echarts.init(document.getElementById("centre-top-left-0"));
+			var Chart1 = echarts.init(document.getElementById("centre-top-left-1"));
+			var Chart2 = echarts.init(document.getElementById("centre-top-left-2"));
+			var Chart3 = echarts.init(document.getElementById("centre-top-right-1"));
+			var Chart4 = echarts.init(document.getElementById("centre-footer-1-chart"));
+			var Chart5 = echarts.init(document.getElementById("centre-footer-2-chart0"));
+			var Chart6 = echarts.init(document.getElementById("centre-footer-3-chart"));
+			var Chart7 = echarts.init(document.getElementById("centre-footer-2-chart1"));
+			var Chart8 = echarts.init(document.getElementById("centre-footer-2-chart2"));
+			//// 指定图表的配置项和数据
+			option0 = {
+							title: {
+			        text: '2,124',
+							subtext:'APPLICANTS',
+			        x: 'center',
+							top:70,
+			        textStyle: {
+			            fontWeight: 'bold',
+			            color: '#5dd054',
+			            fontSize: '20'
+			        },
+							subtextStyle: {
+									color: '#262b2e',
+									fontSize: '10'
+							}
+			    },
+							color: ['#5dd054','#f5f5f5'],
+							tooltip: {
+							show: false
+						},
+						series: [{
+							id:'name',
+						type: 'pie',
+						radius: ['60%', '70%'],
+						label: {
+			            normal: {
+			                position: 'center'
+			            }
+						},
+						hoverAnimation: false,
+						data: []
+			    }]
+			};
+			option1 = {
+									title: {
+									text: '1,467',
+									subtext:'INTERVIEWS',
+									x: 'center',
+									top:70,
+									textStyle: {
+											fontWeight: 'bold',
+											color: '#69a5e1',
+											fontSize: '20'
+									},
+									subtextStyle: {
+											color: '#262b2e',
+											fontSize: '10'
+									}
+							},
+							color: ['#69a5e1','#f5f5f5'],
+							tooltip: {
+								show: false
+							},
+							series: [{
+								name: '任务进度',
+								type: 'pie',
+								radius: ['60%', '70%'],
+								label: {
+									normal: {
+										position: 'center'
+									}
+								},
+								hoverAnimation: false,
+								data: []
+							}]
+						};
+			option2 = {
+									title: {
+									text: '296',
+									subtext:'FORWARDS',
+									x: 'center',
+									top:70,
+									textStyle: {
+											fontWeight: 'bold',
+											color: '#fdba4f',
+											fontSize: '20'
+									},
+									subtextStyle: {
+											color: '#262b2e',
+											fontSize: '10'
+									}
+							},
+							color: ['#fdba4f','#f5f5f5'],
+							tooltip: {
+								show: false
+							},
+							series: [{
+								type: 'pie',
+								radius: ['60%', '70%'],
+								label: {
+									normal: {
+										position: 'center'
+									}
+								},
+								hoverAnimation: false,
+								data: []
+							}]
+						};
+			option3 = {
+			    color: ['#5dd054'],
+			    tooltip : {
+			        trigger: 'axis',
+			        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+			            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+			        }
+			    },
+			    grid: {
+			        left: '3%',
+			        right: '4%',
+			        bottom: '3%',
+			        containLabel: true
+			    },
+			    xAxis : [
+			        {
+			            type : 'category',
+			            axisTick: {
+			                alignWithLabel: false
+			            },
+									axisLine: {
+											show: false,
+									},
+			        }
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+									minInterval:50,
+									axisLine: {
+											show: false,
+									},
+			        }
+			    ],
+			    series : [
+			        {
+			            name:'',
+			            type:'bar',
+			            barWidth: '45%',
+			            data:[]
+			        }
+			    ]
+			};
+			option4 = {
+			    color:['#5dd054','#bbe2e8'],
+			    series: [
+			        {
+			            type:'pie',
+			            //饼状图
+			            avoidLabelOverlap: false,
+			            //标签
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'inside',
+			                    formatter: '{d}%',
+			                   textStyle : {                   
+			                    align : 'center',
+			                    baseline : 'middle',
+			                    fontFamily : '微软雅黑',
+			                    fontSize : 15,
+			                    fontWeight : 'bolder'
+			                 }
+			                },
+			            },
+			            data:[]
+			        }
+			    ]
+			};
+			option5 = {
+					visualMap: {
+						type: 'piecewise',
+						orient: 'horizontal',
+						right:10,
+						bottom: 10,
+						pieces: [{
+							color: '#5dd054',
+							label: 'Day'
+						}, {
+							color:'#69a5e1',
+							label: 'Night'
+						}, ],
+						seriesIndex: 1,
+						dimension: 1
+					},
+			   title: {
+			        text: 'Market Value',
+			        subtext: '$20,467',
+			        x: 'left',
+			        textStyle: {
+			            color: '#262b2e',
+			        },
+			        subtextStyle:{
+			            color:'#262b2e',
+						fontSize:35
+			        },
+					itemGap:10
+			    },
+					dataset: {
+			        source: [
+			            ['July',560,650 ],  
+			            ['June', 433, 858],
+			            [ 'May', 831, 734],
+			            ['April',864, 1152],
+			            ['March', 1230, 890]
+			        ]
+			    },
+					grid: {
+							left: '0px',
+							containLabel: true
+					},
+			    yAxis: [{
+			        axisTick: {
+			            show: false
+			        },
+			        axisLine: {
+			            show: false,
+			        },
+			        axisLabel: {
+			            color: '#3e4956',
+			            fontSize: 12,
+			        },
+			        type: 'category',
+			        position: 'left',
 			
+			    }],
+			    xAxis: [{
+			        show: false,
+			        axisTick: {
+			            show: false
+			        },
+			        type: 'value',
+			        name: '',
+			        min: 0,
+			        max: 1300,
+			        inverse: false,
+			        axisLine: {
+			            show: false,
+			        },
+			    }],
+			    series: [{
+			            name: 'Day',
+			            align: 'left',
+			            type: 'bar',
+			            itemStyle: {
+			                normal: {
+			                    color: '#69a5e1'
+			                }
+			            },
+			            barWidth: '10',
+			        },
+			        {
+			            name: 'Night',
+			            align: 'left',
+			            type: 'bar',
+			            barGap: '99%',
+			            barWidth: '10',
+			            itemStyle: {
+			                normal: {
+			                    color: '#5dd054'
+			                }
+			            },
+			        },
+			    ]
+			};
+			option6 = {
+			// 		<-- 提示-->
+			//         tooltip: {
+			//             trigger: 'axis'
+			//         },
+			title: {
+			      text: '25,134',
+			      x: 'center',
+			      y: '22%',
+			      textStyle: {
+			        	fontWeight:'bold',
+			        	lineHeight:50,
+			        	fontSize:30,
+			        	color: '#262b2e',
+			        },
+						
+			    },
+					legend: {
+						itemGap:6,
+			      data: [
+							{
+								name: 'FOLLOWERS',
+								icon: "circle",
+								
+								textStyle: {
+									fontSize:15,
+									color: "#262b2e"
+								}
+							},
+							
+			      ],
+			      top: '30%',
+			      textStyle: {
+			        color: "#fff"
+			      }
+			    },
+					grid: {
+			        top: '50%',
+			        containLabel: true
+			    },
+					xAxis: [{
+			      type: 'category',
+						boundaryGap:false,
+						axisTick:{
+							show:false
+						},
+						axisLine:{
+							show:false
+						},
+			            data: []
+			        }],
+			        yAxis: [{
+						splitNumber:2,
+						axisLabel:{
+							show:false
+						},
+						axisTick:{
+							show:false
+						},
+						axisLine:{
+							show:false
+						}
+			        }],
+			        series: [{
+			            name: 'FOLLOWERS',
+						color:'#69a5e1',
+			      type: 'line',
+						symbol:'none',
+						smooth:0.6,
+			            data: []
+			        }]
+			    };
+			option7 = {
+								visualMap: {
+									type: 'piecewise',
+									orient: 'horizontal',
+									right:10,
+									bottom: 10,
+									pieces: [{
+										color: '#5dd054',
+										label: 'Day'
+									}, {
+										color:'#69a5e1',
+										label: 'Night'
+									}, ],
+									seriesIndex: 1,
+									dimension: 1
+								},
+						   title: {
+						        text: 'Market Value',
+						        subtext: '$20,467',
+						        x: 'left',
+						        textStyle: {
+						            color: '#262b2e',
+						        },
+						        subtextStyle:{
+						            color:'#262b2e',
+									fontSize:35
+						        },
+								itemGap:10
+						    },
+								dataset: {
+						        source: [
+						            ['Day1',1360,650 ],  
+						            ['Day2', 433, 658],
+						            ['Day3', 831, 734],
+						            ['Day4',864, 1152],
+						            ['Day5', 1230, 1190]
+						        ]
+						    },
+								grid: {
+										left: '0px',
+										containLabel: true
+								},
+						    yAxis: [{
+						        axisTick: {
+						            show: false
+						        },
+						        axisLine: {
+						            show: false,
+						        },
+						        axisLabel: {
+						            color: '#3e4956',
+						            fontSize: 12,
+						        },
+						        type: 'category',
+						        position: 'left',
+						
+						    }],
+						    xAxis: [{
+						        show: false,
+						        axisTick: {
+						            show: false
+						        },
+						        type: 'value',
+						        name: '',
+						        min: 0,
+						        max: 1300,
+						        inverse: false,
+						        axisLine: {
+						            show: false,
+						        },
+						    }],
+						    series: [{
+						            name: 'Day',
+						            align: 'left',
+						            type: 'bar',
+						            itemStyle: {
+						                normal: {
+						                    color: '#69a5e1'
+						                }
+						            },
+						            barWidth: '10',
+						        },
+						        {
+						            name: 'Night',
+						            align: 'left',
+						            type: 'bar',
+						            barGap: '99%',
+						            barWidth: '10',
+						            itemStyle: {
+						                normal: {
+						                    color: '#5dd054'
+						                }
+						            },
+						        },
+						    ]
+						};
+			option8 = {
+								
+								visualMap: {
+									type: 'piecewise',
+									orient: 'horizontal',
+									right:10,
+									bottom: 10,
+									pieces: [{
+										color: '#5dd054',
+										label: 'Day'
+									}, {
+										color:'#69a5e1',
+										label: 'Night'
+									}, ],
+									seriesIndex: 1,
+									dimension: 1
+								},
+						   title: {
+						        text: 'Market Value',
+						        subtext: '$20,467',
+						        x: 'left',
+						        textStyle: {
+						            color: '#262b2e',
+						        },
+						        subtextStyle:{
+						            color:'#262b2e',
+									fontSize:35
+						        },
+								itemGap:10
+						    },
+								dataset: {
+						        source: [
+						            ['1year',560,650 ],  
+						            ['2year', 433, 858],
+						            [ '3year', 831, 1234],
+						            ['4year',864, 452],
+						            ['5year', 1230, 890]
+						        ]
+						    },
+								grid: {
+										left: '0px',
+										containLabel: true
+								},
+						    yAxis: [{
+						        axisTick: {
+						            show: false
+						        },
+						        axisLine: {
+						            show: false,
+						        },
+						        axisLabel: {
+						            color: '#3e4956',
+						            fontSize: 12,
+						        },
+						        type: 'category',
+						        position: 'left',
+						
+						    }],
+						    xAxis: [{
+						        show: false,
+						        axisTick: {
+						            show: false
+						        },
+						        type: 'value',
+						        min: 0,
+						        max: 1300,
+						        inverse: false,
+						        axisLine: {
+						            show: false,
+						        },
+						    }],
+						    series: [{
+						            name: 'Day',
+						            align: 'left',
+						            type: 'bar',
+												color: '#69a5e1',
+						            barWidth: '10',
+						        },
+						        {
+						            name: 'Night',
+						            align: 'left',
+						            type: 'bar',
+						            barGap: '100%',
+												color: '#5dd054',
+						            barWidth: '10',
+						        },
+						    ]
+						};
+			//异步加载数据
+						//第零个Echarts图表数据
+						function fetchData0(cb) {
+						    // 通过 setTimeout 模拟异步加载
+						    setTimeout(function () {
+						        cb({
+						            data: [120, 20]
+						        });
+						    }, 1000);
+						};
+						//第一个Echarts图表数据
+						function fetchData1(cb) {
+								// 通过 setTimeout 模拟异步加载
+								setTimeout(function () {
+										cb({
+												data: [1200, 420]
+										});
+								}, 1000);
+						};
+						//第二个Echarts图表数据
+						function fetchData2(cb) {
+								// 通过 setTimeout 模拟异步加载
+								setTimeout(function () {
+										cb({
+												data: [1020, 290]
+										});
+								}, 1000);
+						};
+						//第三个Echarts图表数据
+						function fetchData3(cb) {
+			    // 通过 setTimeout 模拟异步加载
+			    setTimeout(function () {
+			        cb({
+			            data: [120, 60, 86, 105, 68, 90,123,98,68]
+			        });
+			    }, 1000);
+			};
+						//第四个Echarts图表数据
+						function fetchData4(cb) {
+						    // 通过 setTimeout 模拟异步加载
+						    setTimeout(function () {
+						        cb({
+						            data: [120, 600]
+						        });
+						    }, 1000);
+						}
+						//第六个Echarts图表数据
+						function fetchData6(cb) {
+						    // 通过 setTimeout 模拟异步加载
+						    setTimeout(function () {
+						        cb({
+												Month: ['JUNE 20','JULY 15','AUGUST 3'],
+						            data: [1, 8,10]
+						        });
+						    }, 1000);
+						}
+						//数据加载完成前先加载动画
+						Chart0.showLoading();
+						Chart1.showLoading();
+						Chart2.showLoading();
+						Chart3.showLoading();
+						Chart4.showLoading();
+						Chart6.showLoading();
+						fetchData0(function (data) {
+							//获取数据后，隐藏loading动画
+							Chart0.hideLoading();
+							Chart0.setOption({
+						        series: [{
+									data: data.data
+						        }]
+						    });
+						});
+						fetchData1(function (data) {
+							//获取数据后，隐藏loading动画
+							Chart1.hideLoading();
+							Chart1.setOption({
+						        series: [{
+						            data: data.data
+						        }]
+						    });
+						});
+						fetchData2(function (data) {
+							//获取数据后，隐藏loading动画
+							Chart2.hideLoading();
+							Chart2.setOption({
+						        series: [{
+						            data: data.data
+						        }]
+						    });
+						});
+						fetchData3(function (data) {
+							//获取数据后，隐藏loading动画
+							Chart3.hideLoading();
+						Chart3.setOption({
+			        series: [{
+			            data: data.data
+			        }]
+			    });
+			});
+						fetchData4(function (data) {
+						//获取数据后，隐藏loading动画
+						Chart4.hideLoading();
+						Chart4.setOption({
+			        series: [{
+			            data: data.data
+			        }]
+			    });
+			});
+						fetchData6(function (data) {
+						//获取数据后，隐藏loading动画
+						Chart6.hideLoading();
+						Chart6.setOption({
+							xAxis: {
+			            data: data.Month
+			        },
+			        series: [{
+			            data: data.data
+			        }]
+			    });
+			});
+		
+				// 使用刚指定的配置项和数据显示图表。
+				Chart0.setOption(option0);
+				Chart1.setOption(option1);
+				Chart2.setOption(option2);
+				Chart3.setOption(option3);
+				Chart4.setOption(option4);
+				Chart5.setOption(option5);
+				Chart6.setOption(option6);
+				Chart7.setOption(option7);
+				Chart8.setOption(option8);
 		</script>
 	</body>
 </html>
